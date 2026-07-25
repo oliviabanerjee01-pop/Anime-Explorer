@@ -4,6 +4,15 @@
     font-family: 'poppins',sans-serif;
     box-sizing: border-box;
 }
+#left-btn,
+#right-btn{
+    transition: transform 0.2s;
+}
+
+#left-btn:active,
+#right-btn:active{
+    transform: scale(0.9);
+}
 .container{
     width:100%;
     min-height:100vh;
@@ -64,13 +73,79 @@ h1{
     letter-spacing:3px;
 }
 #anime-list{
+    
+    display: flex;
+    gap: 20px;
+
+    overflow-x: hidden;
+
+    width: 90%;
     margin-top: 30px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    background: rgba(0,0,0,0.75);
-    padding: 20px;
+    scroll-behavior: smooth;
+    
+}
+.anime-card{
+    background: rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
     border-radius: 15px;
-    width: 600px;
-    text-align: center;
+
+    color: white;
+
+    min-width: 220px;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease;
+
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.anime-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.anime-card img{
+    width: 100%;
+    border-radius: 10px;
+    border:2px solid red;
+    height:auto;
+}
+.anime-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    width:95%;
+    justify-content:center;
+    width:100%;
+    margin-top:30px;
+}
+.anime-card h3{
+    
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+.anime-card p{
+    margin-top: auto;
+    font-size:16px;
+    color:gold;
 }
