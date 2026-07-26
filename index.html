@@ -9,20 +9,41 @@
 </head>
 <body>
     <div class="container">
+        <div class="title"><h1>Otaku Hub</h1></div>
+        
         <div class="anime-explorer">
-            <h1>Otaku Hub</h1>
+
+            
             <input type="text" id="input-box" placeholder="Find your Anime">
             <button id="button">Search</button>
+
+            <select id="sort-select">
+                <option value="score">Highest Rated</option>
+                <option value="title">A-Z</option>
+                <option value="popularity">Popularity</option>
+            </select>
         </div>
         
         <div class="anime-section">
             <button id="left-btn">◀</button>
+            
             <div id="anime-list"></div>
             <button id="right-btn">▶</button>
         </div>
-        
+        <div id="anime-modal" class="hidden">
+            <div id="modal-content">
+                <span id ="close-modal">✖</span>
+                <img id="modal-image">
+                <h2 id="modal-title"></h2>
+                <p id="modal-score"></p>
+                <p id="modal-synopsis"></p>
+            </div>
+        </div>
         
     </div>
-
+    <div id="loader" class="hidden">
+        <div class="magic-circle"></div>
+        <h2>Opening the Akashic Records...</h2>
+    </div>
 </body>
 </html>
